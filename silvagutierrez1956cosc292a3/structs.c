@@ -36,8 +36,53 @@ Vehicle* createVehicle(BYTE bVin[], BYTE bMake[], BYTE bModel[], BYTE* bDescript
 		vPtr->Description = (BYTE*)malloc((strlen((char*)bDescription) + 1) * sizeof(BYTE));
 		strcpy_s(vPtr->Description, strlen((char*)bDescription) + 1, bDescription );
 	}
-
 	return vPtr;
 }
 
 
+/// <summary>
+/// This function will display the different parameters of a vehicle to the console
+/// </summary>
+/// <param name="v">vehicle struct to be displayed (not a pointer)</param>
+void displayVehicle(Vehicle v)
+{
+	printf("VIN: %s\n", v.VIN );
+	printf("Make: %s\n", v.Make);
+	printf("Model: %s\n", v.Model);
+	printf("%s\n", v.Description);
+}
+
+/// <summary>
+/// This function will add a vehicle pointer to a struct called garage
+/// </summary>
+/// <param name="g">pointer to the garage struct, this struct stores an array of vehicles pointers</param>
+/// <param name="vPtr">pointer to a vehicle</param>
+void addVehicleToGarage(Garage* g, Vehicle* vPtr)
+{
+    // Check if this is the first vehicle being added
+    if (g->NumVehicles == 0)
+    {
+        // Allocate memory for one vehicle pointer
+        g->Vehicles = (Vehicle**)malloc(sizeof(Vehicle*));
+    }
+    else
+    {
+        // Reallocate the Vehicles array to fit one more Vehicle*
+        g->Vehicles = (Vehicle**)realloc(g->Vehicles, (g->NumVehicles + 1) * sizeof(Vehicle*));
+    }
+    // Check if the memory allocation (or reallocation) was successful
+    if (g->Vehicles != NULL)
+    {
+        // Add the new vehicle pointer to the array
+        g->Vehicles[g->NumVehicles] = vPtr;
+
+        // Increment the number of vehicles in the garage
+        g->NumVehicles += 1;
+    }
+    else
+    {
+        // Handle memory allocation failure; in a real application, you might want to log this or exit
+        printf("Failed to allocate memory for a new vehicle in the garage.\n");
+    }
+
+}
