@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\VisualStudioProjects\\cosc292-assignment3-vehicle-management-struct-serialization-file-io\\silvagutierrez1956cosc292a3\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{925AB8E7-94A0-497A-A786-4198406EED91}|silvagutierrez1956cosc292a3.vcxproj|C:\\VisualStudioProjects\\cosc292-assignment3-vehicle-management-struct-serialization-file-io\\silvagutierrez1956cosc292a3\\program.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{925AB8E7-94A0-497A-A786-4198406EED91}|silvagutierrez1956cosc292a3.vcxproj|solutionrelative:program.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "program.c",
+              "DocumentMoniker": "C:\\VisualStudioProjects\\cosc292-assignment3-vehicle-management-struct-serialization-file-io\\silvagutierrez1956cosc292a3\\program.c",
+              "RelativeDocumentMoniker": "program.c",
+              "ToolTip": "C:\\VisualStudioProjects\\cosc292-assignment3-vehicle-management-struct-serialization-file-io\\silvagutierrez1956cosc292a3\\program.c",
+              "RelativeToolTip": "program.c",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2024-04-08T03:11:41.339Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
