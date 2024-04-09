@@ -86,3 +86,14 @@ void addVehicleToGarage(Garage* g, Vehicle* vPtr)
     }
 
 }
+
+
+/// <summary>
+/// This function will display to the console the content of all vehicles in the pointer array
+/// </summary>
+/// <param name="g">Garage struct containing an array of pointers to vehicles and a counter of vehicles. </param>
+void displayGarage(Garage g)
+{
+    printf("The number of vehicles is %d\n", g.NumVehicles);
+
+}

@@ -10,7 +10,15 @@ void testCreateAndDisplayVehicle()
 
     Vehicle* myVehicle = createVehicle(vin, make, model, description);
 
+
     displayVehicle(*myVehicle);
+
+    Garage g = { NULL, 0 };
+
+    addVehicleToGarage(&g, myVehicle);
+
+    displayGarage(g);
+
 }
 
 

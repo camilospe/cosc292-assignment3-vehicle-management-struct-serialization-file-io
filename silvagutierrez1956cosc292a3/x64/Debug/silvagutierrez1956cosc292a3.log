@@ -1,4 +1,4 @@
-﻿  program.c
-  structs.c
-  Generating Code...
+﻿  structs.c
+C:\VisualStudioProjects\cosc292-assignment3-vehicle-management-struct-serialization-file-io\silvagutierrez1956cosc292a3\structs.c(99,12): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'Vehicle *'
+C:\VisualStudioProjects\cosc292-assignment3-vehicle-management-struct-serialization-file-io\silvagutierrez1956cosc292a3\structs.c(100,12): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'Vehicle *'
   silvagutierrez1956cosc292a3.vcxproj -> C:\VisualStudioProjects\cosc292-assignment3-vehicle-management-struct-serialization-file-io\silvagutierrez1956cosc292a3\x64\Debug\silvagutierrez1956cosc292a3.exe
