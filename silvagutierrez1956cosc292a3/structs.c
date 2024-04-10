@@ -107,3 +107,36 @@ void displayGarage(Garage g)
         printf("Description: %s\n\n", currentVehicle->Description); 
     }
 }
+
+
+/// <summary>
+/// This function will serialize a vehicle struc so it can be passed through a network or a file
+/// </summary>
+/// <param name="vPtr">pointer to a vehicle</param>
+/// <returns>pointer to a serialized vehicle</returns>
+BYTE* serializeVehicle(Vehicle* vPtr)
+{
+    //get the size of the description
+    int nSize = strlen(vPtr->Description);
+
+    int totalSize = nSize + 1 + 18 + 25 + 25 + 4;// description + null terminator + Vin + Make + Model + int for size of description
+
+
+    BYTE* serializedVehicle = (BYTE*)malloc(totalSize * sizeof(BYTE));
+
+    BYTE* svPtr = serializedVehicle;
+
+    //we add everyvalue to the memory and move the pointer to the new location
+    memcpy(svPtr, vPtr->VIN, VIN_SIZE);
+    svPtr += VIN_SIZE;
+    memcpy(svPtr, vPtr->Make, MAKE_SIZE);
+    svPtr += MAKE_SIZE;
+    memcpy(svPtr, vPtr->Model, MODEL_SIZE);
+    svPtr += MODEL_SIZE;
+    memcpy(svPtr,&nSize,sizeof(int));
+    svPtr += sizeof(int);
+    memcpy(svPtr, vPtr->Description, nSize + 1);
+
+    //return the original pointer that wasnt moved
+    return serializedVehicle;
+}
