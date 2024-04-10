@@ -94,6 +94,16 @@ void addVehicleToGarage(Garage* g, Vehicle* vPtr)
 /// <param name="g">Garage struct containing an array of pointers to vehicles and a counter of vehicles. </param>
 void displayGarage(Garage g)
 {
-    printf("The number of vehicles is %d\n", g.NumVehicles);
+    printf("There are %d vehicles\n", g.NumVehicles);
+    for (size_t i = 0; i < g.NumVehicles; i++) {
 
+        // grab the vehicle from the array 
+        Vehicle* currentVehicle = g.Vehicles[i]; 
+
+        //print the values
+        printf("VIN: %s\n", currentVehicle->VIN);
+        printf("Make: %s\n", currentVehicle->Make);
+        printf("Model: %s\n", currentVehicle->Model);
+        printf("Description: %s\n\n", currentVehicle->Description); 
+    }
 }
