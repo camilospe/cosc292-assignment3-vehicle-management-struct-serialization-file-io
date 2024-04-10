@@ -1,2 +1,4 @@
-﻿  structs.c
+﻿  program.c
+C:\VisualStudioProjects\cosc292-assignment3-vehicle-management-struct-serialization-file-io\silvagutierrez1956cosc292a3\program.c(71,32): warning C4090: 'function': different 'const' qualifiers
+C:\VisualStudioProjects\cosc292-assignment3-vehicle-management-struct-serialization-file-io\silvagutierrez1956cosc292a3\program.c(105,23): warning C4013: 'strlen' undefined; assuming extern returning int
   silvagutierrez1956cosc292a3.vcxproj -> C:\VisualStudioProjects\cosc292-assignment3-vehicle-management-struct-serialization-file-io\silvagutierrez1956cosc292a3\x64\Debug\silvagutierrez1956cosc292a3.exe

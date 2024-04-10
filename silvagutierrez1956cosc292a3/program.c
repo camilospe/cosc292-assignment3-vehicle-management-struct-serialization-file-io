@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include "structs.h"
+#include "fileio.h"
 #define MAX_DESCRIPTION	255
+#define BUFFERSIZE 57
 
 void enterVehicles(Garage* g)
 {
@@ -58,8 +60,66 @@ void testCreateAndDisplayVehicle() {
     // Display all vehicles in the garage
     displayGarage(g);
 }
+// Function to write predefined content to a new file
+int createFileWithContent(const char* filePath, const BYTE* content, int contentSize) {
+    FILE* file = openFile(filePath, "wb");
+    if (!file) {
+        printf("Failed to open file for writing.\n");
+        return -1;
+    }
+
+    if (writeFile(file, content, contentSize) != 0) {
+        printf("Failed to write to file.\n");
+        fclose(file);
+        return -1;
+    }
+
+    fclose(file);
+    return 0; // Success
+}
+
+// Function to read a file and print its contents
+int printFileContents(const char* filePath) {
+    BYTE buffer[BUFFERSIZE];
+    FILE* file = openFile(filePath, "rb");
+    if (!file) {
+        printf("Failed to open file for reading.\n");
+        return -1;
+    }
+
+    if (readFile(file, buffer, BUFFERSIZE) != 0) {
+        printf("Failed to read file.\n");
+        fclose(file);
+        return -1;
+    }
+
+    // Assuming the content is text for demonstration purposes
+    printf("File Contents: %s\n", buffer);
+    fclose(file);
+    return 0;
+}
 
 int main() {
+    const char* filePath = "example.txt";
+    const char* content = "Hello, this is a test file. this is so much test to read";
+    int contentSize = strlen(content) + 1; // +1 for the null terminator
+
+    // Create a file and write predefined content to it
+    if (createFileWithContent(filePath, (BYTE*)content, contentSize) == 0) {
+        printf("File created successfully.\n");
+    }
+    else {
+        printf("Failed to create file.\n");
+        return -1;
+    }
+
+    // Read the newly created file and print its contents
+    if (printFileContents(filePath) == 0) {
+        printf("File read successfully.\n");
+    }
+    else {
+        printf("Failed to read file.\n");
+    }
 
     testCreateAndDisplayVehicle();
 

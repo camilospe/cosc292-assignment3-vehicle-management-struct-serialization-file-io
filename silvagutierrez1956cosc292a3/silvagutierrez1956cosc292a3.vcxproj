@@ -127,10 +127,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="fileio.c" />
     <ClCompile Include="program.c" />
     <ClCompile Include="structs.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="fileio.h" />
     <ClInclude Include="structs.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
