@@ -6,6 +6,7 @@
 #include <crtdbg.h>
 #include <string.h> 
 #include "structs.h"
+#include "fileio.h"
 
 /// <summary>
 /// Dynamically allocates and initializes a Vehicle structure with the provided attributes.
@@ -139,4 +140,31 @@ BYTE* serializeVehicle(Vehicle* vPtr)
 
     //return the original pointer that wasnt moved
     return serializedVehicle;
+}
+
+/// <summary>
+/// This function loops through a garage, serializes each vehicle, and prints them to the file.
+/// </summary>
+/// <param name="g">The garage to loop through.</param>
+/// <param name="filePtr">Pointer to an open file.</param>
+void writeGarageToFile(Garage g, FILE* filePtr)
+{
+    //we write the number of vehicles.
+    writeFile(filePtr, &(g.NumVehicles), 2);
+
+    for (size_t i = 0; i < g.NumVehicles; i++)
+    {
+        // grab the vehicle from the array 
+        Vehicle* currentVehicle = g.Vehicles[i];
+
+        //serialize the vehicle
+
+        BYTE* currentSVehicle = serializeVehicle(currentVehicle);
+
+        // Calculate the size of the serialized vehicle dynamically
+        int descriptionLength = strlen(currentVehicle->Description);
+        int totalSize = VIN_SIZE + MAKE_SIZE + MODEL_SIZE + sizeof(int) + descriptionLength + 1; // +1 for null terminator of the description
+
+        writeFile(filePtr, currentSVehicle, totalSize);
+    }
 }
