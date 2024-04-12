@@ -150,7 +150,7 @@ BYTE* serializeVehicle(Vehicle* vPtr)
 void writeGarageToFile(Garage g, FILE* filePtr)
 {
     //we write the number of vehicles.
-    writeFile(filePtr, &(g.NumVehicles), 2);
+    writeFile(filePtr, &(g.NumVehicles), 2*sizeof(char));
 
     for (size_t i = 0; i < g.NumVehicles; i++)
     {
@@ -166,5 +166,65 @@ void writeGarageToFile(Garage g, FILE* filePtr)
         int totalSize = VIN_SIZE + MAKE_SIZE + MODEL_SIZE + sizeof(int) + descriptionLength + 1; // +1 for null terminator of the description
 
         writeFile(filePtr, currentSVehicle, totalSize);
+    }
+}
+
+
+
+/// <summary>
+/// This function is meant to read an open file consisting of a serialized garage
+/// the function will both save the vehicles to the garage and print them to console
+/// </summary>
+/// <param name="g"></param>
+/// <param name="filePtr"></param>
+void readGarageFromFile(Garage* g, FILE* filePtr)
+{
+    short numVehicles;
+    // Read 2 bytes from the file
+    size_t bytesRead = fread(&numVehicles, sizeof(short), 1, filePtr);
+    if (bytesRead == 1) {
+        // Successfully read the number, print it
+        printf("Number of vehicles: %d\n", numVehicles);
+        //loop for each vehicle
+
+        for (size_t i = 0; i < numVehicles; i++)
+        {
+
+            BYTE bVin[VIN_SIZE];
+            BYTE bMake[MAKE_SIZE];
+            BYTE bModel[MODEL_SIZE];
+            int descriptionLenght;
+
+            // get the values from the file
+            readFile(filePtr, bVin, VIN_SIZE);
+            readFile(filePtr, bMake, MAKE_SIZE);
+            readFile(filePtr, bModel, MODEL_SIZE);
+            readFile(filePtr, &descriptionLenght, 4);
+
+            //print the values because why not
+            printf("VIN: %s\n", bVin);
+            printf("Make: %s\n", bMake);
+            printf("Model: %s\n", bModel);
+            printf("lenght: %d\n", descriptionLenght);
+
+            //get the description
+            char* description = (char*)malloc((descriptionLenght + 1) * sizeof(char));
+            readFile(filePtr, description, descriptionLenght + 1);
+            printf("%s\n\n", description);
+            Vehicle* vehicle = createVehicle(bVin, bMake, bModel, description);
+
+            addVehicleToGarage(g, vehicle);
+
+            free(description);
+        }
+    }
+    else {
+        if (feof(filePtr)) {
+            fprintf(stderr, "Unexpected end of file\n");
+
+        }
+        else if (ferror(filePtr)) {
+            fprintf(stderr, "Error reading file\n");
+        }
     }
 }

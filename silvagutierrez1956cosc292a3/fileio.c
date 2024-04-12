@@ -69,13 +69,13 @@ int readFile(FILE* filePtr, BYTE* data, int bytesToRead)
 /// <param name="data">pointer to the data to be written</param>
 /// <param name="bytesToWrite">number of bytes to be written</param>
 /// <returns>error code</returns>
-int writeFile(FILE* filePtr, BYTE* data, int bytesToWrite)
-{
+int writeFile(FILE* filePtr, BYTE* data, int bytesToWrite) {
 	// Validate parameters
 	if (!filePtr || !data) {
-		return -1; 
+		return -1;
 	}
 
+	// Write the data to the file
 	int writtenBytes = fwrite(data, sizeof(char), bytesToWrite, filePtr);
 
 	// Check for write completion and file errors

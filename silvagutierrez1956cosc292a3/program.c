@@ -59,6 +59,16 @@ void testCreateAndDisplayVehicle() {
 
     // Display all vehicles in the garage
     displayGarage(g);
+
+    const char* filePath = "cars.txt";
+
+    FILE* printfl = openFile(filePath, "wb");
+
+    writeGarageToFile(g, printfl);
+
+    FILE* printfl2 = openFile("cars2.txt", "rb");
+
+    readGarageFromFile(&g, printfl2);
 }
 // Function to write predefined content to a new file
 int createFileWithContent(const char* filePath, const BYTE* content, int contentSize) {
