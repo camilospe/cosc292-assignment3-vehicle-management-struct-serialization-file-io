@@ -50,7 +50,7 @@ void displayVehicle(Vehicle v)
 	printf("VIN: %s\n", v.VIN );
 	printf("Make: %s\n", v.Make);
 	printf("Model: %s\n", v.Model);
-	printf("%s\n", v.Description);
+	printf("%s\n\n", v.Description);
 }
 
 /// <summary>
@@ -149,6 +149,7 @@ BYTE* serializeVehicle(Vehicle* vPtr)
 /// <param name="filePtr">Pointer to an open file.</param>
 void writeGarageToFile(Garage g, FILE* filePtr)
 {
+
     //we write the number of vehicles.
     writeFile(filePtr, &(g.NumVehicles), 2*sizeof(char));
 

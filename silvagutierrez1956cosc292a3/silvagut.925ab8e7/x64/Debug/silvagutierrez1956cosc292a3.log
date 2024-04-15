@@ -1,6 +1,5 @@
-﻿  structs.c
-C:\VisualStudioProjects\cosc292-assignment3-vehicle-management-struct-serialization-file-io\silvagutierrez1956cosc292a3\structs.c(121,17): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\VisualStudioProjects\cosc292-assignment3-vehicle-management-struct-serialization-file-io\silvagutierrez1956cosc292a3\structs.c(153,24): warning C4133: 'function': incompatible types - from 'unsigned short *' to 'BYTE *'
-C:\VisualStudioProjects\cosc292-assignment3-vehicle-management-struct-serialization-file-io\silvagutierrez1956cosc292a3\structs.c(165,33): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\VisualStudioProjects\cosc292-assignment3-vehicle-management-struct-serialization-file-io\silvagutierrez1956cosc292a3\structs.c(202,31): warning C4133: 'function': incompatible types - from 'int *' to 'BYTE *'
+﻿  program.c
+C:\VisualStudioProjects\cosc292-assignment3-vehicle-management-struct-serialization-file-io\silvagutierrez1956cosc292a3\program.c(126,5): warning C4013: 'free' undefined; assuming extern returning int
+C:\VisualStudioProjects\cosc292-assignment3-vehicle-management-struct-serialization-file-io\silvagutierrez1956cosc292a3\program.c(141,23): warning C4013: 'strlen' undefined; assuming extern returning int
+C:\VisualStudioProjects\cosc292-assignment3-vehicle-management-struct-serialization-file-io\silvagutierrez1956cosc292a3\program.c(150,46): warning C4090: 'function': different 'const' qualifiers
   silvagutierrez1956cosc292a3.vcxproj -> C:\VisualStudioProjects\cosc292-assignment3-vehicle-management-struct-serialization-file-io\silvagutierrez1956cosc292a3\x64\Debug\silvagutierrez1956cosc292a3.exe

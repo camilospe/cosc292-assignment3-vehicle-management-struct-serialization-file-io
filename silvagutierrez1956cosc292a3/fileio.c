@@ -78,10 +78,16 @@ int writeFile(FILE* filePtr, BYTE* data, int bytesToWrite) {
 	// Write the data to the file
 	int writtenBytes = fwrite(data, sizeof(char), bytesToWrite, filePtr);
 
-	// Check for write completion and file errors
-	if (writtenBytes != bytesToWrite || ferror(filePtr)) {
+	// Check for write completion 
+	if (writtenBytes != bytesToWrite ) {
 		return 1;
 	}
+	//Check for error
+	if (ferror(filePtr))
+	{
+		return 2;
+	}
 
+	//if there are no error then success
 	return 0;
 }
