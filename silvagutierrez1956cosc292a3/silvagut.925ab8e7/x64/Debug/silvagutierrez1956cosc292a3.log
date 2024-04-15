@@ -1,5 +1,1 @@
-﻿  program.c
-C:\VisualStudioProjects\cosc292-assignment3-vehicle-management-struct-serialization-file-io\silvagutierrez1956cosc292a3\program.c(126,5): warning C4013: 'free' undefined; assuming extern returning int
-C:\VisualStudioProjects\cosc292-assignment3-vehicle-management-struct-serialization-file-io\silvagutierrez1956cosc292a3\program.c(141,23): warning C4013: 'strlen' undefined; assuming extern returning int
-C:\VisualStudioProjects\cosc292-assignment3-vehicle-management-struct-serialization-file-io\silvagutierrez1956cosc292a3\program.c(150,46): warning C4090: 'function': different 'const' qualifiers
-  silvagutierrez1956cosc292a3.vcxproj -> C:\VisualStudioProjects\cosc292-assignment3-vehicle-management-struct-serialization-file-io\silvagutierrez1956cosc292a3\x64\Debug\silvagutierrez1956cosc292a3.exe
+﻿
