@@ -1,8 +1,13 @@
+#define _CRTDBG_MAP_ALLOC
+#include <crtdbg.h> 
+
+
 #include <stdio.h>
 #include "structs.h"
 #include "fileio.h"
 #define MAX_DESCRIPTION	255
 #define BUFFERSIZE 57
+
 
 
 
@@ -228,6 +233,8 @@ int main() {
     testOpenAndReadFile();
 
     testWriteGarageToFileAndread();
+
+    _CrtDumpMemoryLeaks();
 
     return 0;
 
