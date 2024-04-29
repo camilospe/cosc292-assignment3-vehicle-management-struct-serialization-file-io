@@ -1,9 +1,4 @@
-﻿  fileio.c
-C:\VisualStudioProjects\cosc292-assignment3-vehicle-management-struct-serialization-file-io\silvagutierrez1956cosc292a3\fileio.c(79,21): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  program.c
-C:\VisualStudioProjects\cosc292-assignment3-vehicle-management-struct-serialization-file-io\silvagutierrez1956cosc292a3\program.c(71,32): warning C4090: 'function': different 'const' qualifiers
-C:\VisualStudioProjects\cosc292-assignment3-vehicle-management-struct-serialization-file-io\silvagutierrez1956cosc292a3\program.c(105,23): warning C4013: 'strlen' undefined; assuming extern returning int
-  structs.c
-  Generating Code...
-  LINK : C:\VisualStudioProjects\cosc292-assignment3-vehicle-management-struct-serialization-file-io\silvagutierrez1956cosc292a3\x64\Debug\silvagutierrez1956cosc292a3.exe not found or not built by the last incremental link; performing full link
+﻿  program.c
+C:\VisualStudioProjects\cosc292-assignment3-vehicle-management-struct-serialization-file-io\silvagutierrez1956cosc292a3\program.c(144,23): warning C4013: 'strlen' undefined; assuming extern returning int
+C:\VisualStudioProjects\cosc292-assignment3-vehicle-management-struct-serialization-file-io\silvagutierrez1956cosc292a3\program.c(153,46): warning C4090: 'function': different 'const' qualifiers
   silvagutierrez1956cosc292a3.vcxproj -> C:\VisualStudioProjects\cosc292-assignment3-vehicle-management-struct-serialization-file-io\silvagutierrez1956cosc292a3\x64\Debug\silvagutierrez1956cosc292a3.exe

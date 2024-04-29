@@ -1,7 +1,5 @@
 #define _CRTDBG_MAP_ALLOC
 #include <crtdbg.h> 
-
-
 #include <stdio.h>
 #include "structs.h"
 #include "fileio.h"

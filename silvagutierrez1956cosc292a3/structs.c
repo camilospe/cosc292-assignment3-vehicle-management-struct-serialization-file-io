@@ -151,7 +151,7 @@ void writeGarageToFile(Garage g, FILE* filePtr)
 {
 
     //we write the number of vehicles.
-    writeFile(filePtr, &(g.NumVehicles), 2*sizeof(char));
+    writeFile(filePtr, &(g.NumVehicles), sizeof(short));
 
     for (size_t i = 0; i < g.NumVehicles; i++)
     {
